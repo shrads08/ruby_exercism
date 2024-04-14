@@ -20,6 +20,9 @@ end
 #-----------------learnings-------------------------------------
 # 1. avoid using return keyword outside flow control
 # 2. avoid using magic numbers in ruby , i.e. using a number (which is required repeatedly) , instead assign it to a constant.
+# 3. 10th line can be written as TIME_TAKEN_BY_A_LAYER * layers, to maintain visual balance.
+# 4. after third method can add a blank line, since other methods have blank line around them, and writing a method is a topic change from class definition, hence topic change can have blank lines around for easy comprehension
+# 5. similarly having blank lines around group of constants.
 
 #***MAGIC NUMBERS***
 
