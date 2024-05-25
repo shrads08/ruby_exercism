@@ -1,8 +1,15 @@
 class BoutiqueInventory
+
+  private
+  
+  attr_reader :items
+
   def initialize(items)
     @items = items
   end
 
+  public
+  
   def item_names
     items.map { | item | item[:name] }.sort
   end
@@ -23,10 +30,8 @@ class BoutiqueInventory
     items.sum { | item | item[:quantity_by_size].values.sum }
   end
 
-  private
-  
-  attr_reader :items
 end
+
 
 =begin
 ---------------------------------------------------------------Learnings------------------------------------------------------------------------------------
