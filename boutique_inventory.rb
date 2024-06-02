@@ -1,11 +1,14 @@
 class BoutiqueInventory
 
+  PRICE_LIMIT = 30
+  private_constant :PRICE_LIMIT
+
   private
   
-  attr_reader :items
+  attr_accessor :items
 
   def initialize(items)
-    @items = items
+    self.items = items
   end
 
   public
@@ -15,7 +18,7 @@ class BoutiqueInventory
   end
 
   def cheap
-    items.select { | item | item[:price] < 30 }
+    items.select { | item | item[:price] < PRICE_LIMIT }
   end
 
   def out_of_stock
