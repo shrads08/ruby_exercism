@@ -1,7 +1,7 @@
 class BoutiqueInventory
 
-  PRICE_LIMIT = 30
-  private_constant :PRICE_LIMIT
+  CHEAP = 0...30
+  private_constant :CHEAP
 
   private
   
@@ -18,7 +18,7 @@ class BoutiqueInventory
   end
 
   def cheap
-    items.select { | item | item[:price] < PRICE_LIMIT }
+    items.select { | item | CHEAP.cover?(item[:price]) }
   end
 
   def out_of_stock
@@ -54,4 +54,8 @@ end
     b. Starts with an initial value of 0.
     c. For each item, it adds the sum of item[:quantity_by_size].values.sum to the accumulator (sum), which accumulates the total sum.
     d. Finally, it returns the accumulated sum.
+5. Range#include? Method
+    The include? method checks if a value is a member of the range. This method considers all the values in the range, which can be more computationally expensive for large ranges of non-numeric values.
+  Range#cover? Method
+    The cover? method checks if a value is within the range, but it does so by comparing the endpoints of the range rather than iterating through each value. This method is generally faster and more suitable for large ranges or ranges of numeric values.
 =end
