@@ -32,5 +32,5 @@ class LockFields
 end
 
 =begin
-.reject removes all those fields which are also present in editable. Similar to @profile.fields[:available] - @profile.fields[:editable]
+.reject removes all those fields which are also present in editable. Similar to @profile_fields[:available] - @profile_fields[:editable]
 =end
